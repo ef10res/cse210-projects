@@ -14,7 +14,7 @@ class Program
         Console.Write("What would you like to do? ");
 
         public int choice = int.Parse(Console.ReadLine());
-
+        List<string> _prompts = new List<string>()
         if (choice == 1)
         {
             
