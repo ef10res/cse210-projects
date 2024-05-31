@@ -17,7 +17,9 @@ class Program
         
         if (choice == 1)
         {
-            
+            Random rnd = new Random();
+            int rndChoice = rnd.Next(0,5);
+            Console.ReadLine(Entry._prompts[rndChoice]);
         }
     }
 }

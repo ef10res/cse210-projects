@@ -1,7 +1,6 @@
 public class Entry
 {
     public string _date;
-    public string _prompt;
     List<string> _prompts = new List<string>()
     {
         "What was something you learned from someone today?",
