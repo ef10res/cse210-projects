@@ -23,7 +23,7 @@ public class Journal
     }
     public void SaveToFile(Entry entry)
     {
-        string  entryFile = "Journal.txt";
+        string  entryFile = "entries.txt";
         using (StreamWriter outputFile = new StreamWriter(entryFile))
         {
             outputFile.WriteLine(entry);
@@ -33,7 +33,7 @@ public class Journal
 
     public void LoadFromFile(Entry entry)
     {
-        string entryFile = "Journal.txt";
+        string entryFile = "entries.txt";
         string [] lines = System.IO.File.ReadAllLines(entryFile);
         foreach (string line in lines)
         {

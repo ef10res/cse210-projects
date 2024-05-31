@@ -21,5 +21,7 @@ class Program
             int rndChoice = rnd.Next(0,5);
             Console.ReadLine(Entry._prompts[rndChoice]);
         }
+
+        if (choice == 2)
     }
 }
