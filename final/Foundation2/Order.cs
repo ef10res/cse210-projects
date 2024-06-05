@@ -2,11 +2,14 @@ public class Order
 {
     private Customer _customer;
     private List<Product> _products = new List<Product>();
+
+    private Address _address;
     
     public Order()
     {
         _customer = new Customer();
         _products = new List<Product>();
+        _address = new Address();
     }
 
     public Order(Customer customer, List<Product> products)
@@ -18,7 +21,7 @@ public class Order
     public int ShippingCost(Customer customer)
     {
         int shipping;
-        if(customer.IsUSA(Address address))
+        if(customer.IsUSA())
         {
             shipping = 5;
         }
@@ -38,7 +41,7 @@ public class Order
             totalproductcost = product.TotalCost(product.GetPrice(), product.GetQuantity());
             totalproductcost = totalproductcost + totalproductcost;
         }
-        totalordercost = totalproductcost + Order.ShippingCost(customer);
+        totalordercost = totalproductcost + this.ShippingCost(customer);
         return totalordercost;
     }
 
@@ -54,12 +57,11 @@ public class Order
         }
     }
 
-    public void ShippingLabel(Customer customer)
+    public void ShippingLabel(Customer customer, Address address)
     {
         string name = customer.GetName();
-        customer = new Customer(); 
 
         Console.WriteLine($"{name}");
-        Console.WriteLine($"{customer.GetAddress()}");
+        address.FullAddress();
     }
 }

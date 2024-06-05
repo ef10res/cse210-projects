@@ -1,7 +1,9 @@
+using System.Runtime.CompilerServices;
+
 public class Customer
 {
     private string _name;
-    private Address _address = new Address();
+    public Address _address = new Address();
 
     public Customer()
     {
@@ -14,10 +16,10 @@ public class Customer
         _address = address;
     }
 
-    public bool IsUSA(Address address)
+    public bool IsUSA()
     {
         bool isUSA = false;
-        if (address.IsLocal())
+        if (this._address.IsLocal())
         {
             isUSA = true;
         }

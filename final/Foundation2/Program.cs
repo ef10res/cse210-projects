@@ -34,13 +34,13 @@ class Program
         Order order2 = new Order(customer2, _products2);
 
         order1.PackingLabel(customer1,_products1);
-        order1.ShippingLabel(customer1);
+        order1.ShippingLabel(customer1, address1);
         double order1Cost = order1.TotalOrderCost(_products1, customer1);
         Console.WriteLine($"$ {order1Cost}");
 
         order2.PackingLabel(customer2,_products2);
-        order2.ShippingLabel(customer2);
-        double order2Cost = order2.TotalOrderCost(_products1, customer2);
+        order2.ShippingLabel(customer2, address2);
+        double order2Cost = order2.TotalOrderCost(_products2, customer2);
          Console.WriteLine($"$ {order2Cost}");
     }
 }

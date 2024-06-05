@@ -69,10 +69,10 @@ public class Address
         return isLocal;
     }
 
-    public void FullAddress(Address address)
+    public void FullAddress()
     {
 
-        Console.WriteLine($"{address.GetStreetAddress()}, {address.GetCity()}");
-        Console.WriteLine($"{address.GetState()}, {address.GetCountry()}");
+        Console.WriteLine($"{this.GetStreetAddress()}, {this.GetCity()}");
+        Console.WriteLine($"{this.GetState()}, {this.GetCountry()}");
     }
 }
