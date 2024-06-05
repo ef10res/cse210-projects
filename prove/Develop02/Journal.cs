@@ -1,7 +1,7 @@
 using System.IO;
+using System.IO.Enumeration;
 public class Journal
 {
-    string fileName = "entriesFile.txt";
     public List<Entry> _entries = new List<Entry>();
 
     public Journal()
@@ -21,12 +21,13 @@ public class Journal
             Console.WriteLine(entry);
         }
     }
-    public void SaveToFile(List<Entry> entries)
+    public void SaveToFile(string fileName, List<Entry> entries)
     {
-        string  entryFile = "entries.txt";
-        using (StreamWriter outputFile = new StreamWriter(entryFile))
+        
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            outputFile.WriteLine(entries);
+            foreach(Entry entry in entries)
+            outputFile.WriteLine($"{entry}");
         }
         
     }
@@ -40,5 +41,4 @@ public class Journal
             Console.WriteLine(line);
         }
     }
-
 }

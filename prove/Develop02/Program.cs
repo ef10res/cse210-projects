@@ -11,6 +11,7 @@ class Program
         string stringDate = date.ToString();
         Entry entry = new Entry();
         Journal journal = new Journal();
+        
 
         Console.WriteLine("1.Write");
         Console.WriteLine("2.Display");
@@ -24,13 +25,6 @@ class Program
         PromptGenerator promptGenerator = new PromptGenerator();
         while (choice != 5)
         {
-            Console.WriteLine("1.Write");
-            Console.WriteLine("2.Display");
-            Console.WriteLine("3.Load");
-            Console.WriteLine("4.Save");
-            Console.WriteLine("5.Quit");
-            Console.WriteLine("What would you like to do?");
-            choice = int.Parse(Console.ReadLine());
 
             if (choice == 1)
             {
@@ -57,13 +51,23 @@ class Program
 
             else if (choice == 4)
             {
-                journal.SaveToFile(journal._entries);
+                Console.WriteLine("What is the name of the file?");
+                string fileName = Console.ReadLine();
+                journal.SaveToFile(fileName, journal._entries);
             }
 
             else 
             {
                 choice = 0;
             }
+
+            Console.WriteLine("1.Write");
+            Console.WriteLine("2.Display");
+            Console.WriteLine("3.Load");
+            Console.WriteLine("4.Save");
+            Console.WriteLine("5.Quit");
+            Console.WriteLine("What would you like to do?");
+            choice = int.Parse(Console.ReadLine());
         }
     }
 }
