@@ -15,12 +15,12 @@ public class Word
 
     public void Show()
     {
-        _text = _text;
+        _text = text;
     }
 
-    public bool _IsHidden()
+    public bool _IsHidden(string text)
     {
-        if(_text = " ______ ")
+        if(text == " ______ ")
         {
             return true;
         }
