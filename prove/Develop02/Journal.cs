@@ -21,23 +21,23 @@ public class Journal
             Console.WriteLine(entry);
         }
     }
-    public void SaveToFile(Entry entry)
+    public void SaveToFile(List<Entry> entries)
     {
         string  entryFile = "entries.txt";
         using (StreamWriter outputFile = new StreamWriter(entryFile))
         {
-            outputFile.WriteLine(entry);
+            outputFile.WriteLine(entries);
         }
         
     }
 
-    public void LoadFromFile(Entry entry)
+    public void LoadFromFile()
     {
         string entryFile = "entries.txt";
         string [] lines = System.IO.File.ReadAllLines(entryFile);
         foreach (string line in lines)
         {
-            Console.ReadLine(line);
+            Console.WriteLine(line);
         }
     }
 
