@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        var date = new DateTime();
+        DateTime date = DateTime.Now;
         string stringDate = date.ToString();
         Entry entry = new Entry();
         Journal journal = new Journal();
@@ -30,6 +30,7 @@ class Program
             {
                 string prompt = promptGenerator.GetRandomPrompt();
                 Console.WriteLine(prompt);
+                stringDate = date.ToString();
                 entry._prompt = prompt;
                 entry._entry = Console.ReadLine();
                 journal._entries.Add(entry);
